@@ -11,7 +11,7 @@ load(temp)
 
 # remove trees that died and unwanted variables
 nf_fia <- nf_fia %>%
-  filter(status_change == "lived") %>% 
+  filter(status_change == "lived", !is.na(ht_rate)) %>% 
   select(ht_rate, spp, dbh_mid, cr_mid, crown_class_s, tree_class_s,
          ba_mid, bal_mid, forest_type_s, stocking_s, landscape, 
          site_class, slope, aspect, lat, lon, elev, plot) %>% 
