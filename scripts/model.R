@@ -30,7 +30,9 @@ test_plots <- sample(unique(nf_fia$plot),
 
 index <- which(nf_fia$plot %in% test_plots)
 train <- nf_fia[-index,]
-test <- nf_fia[index,]
+ht_growth_test <- nf_fia[index,]
+
+# save(ht_growth_test, file = "../big-rdas/ht-growth-test.rda")
 
 x <- select(train, -plot, -ht_rate)
 y <- train[,1]
